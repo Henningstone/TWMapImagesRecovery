@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
 		if (strcmp(argv[1], "--version") == 0)
 			std::cout << "TWMapImagesRecovery "APP_VERSION << std::endl;
 		else
-			std::cout << "Parameter Unknown!" << std::endl;
+			std::cout << "ERROR: Unknown Parameter!" << std::endl;
 
 		return 0;
 	}
