@@ -109,10 +109,10 @@ bool stealIt(const char *pathMap, const char *pathSave)
 					snprintf(finalPath, sizeof(finalPath), "%s/%s.png", pathSave, pName);
 
 					// copy image data
-		            png_t png;
-		            png_open_file_write(&png, finalPath);
-		            png_set_data(&png, pItem->m_Width, pItem->m_Height, 8, PNG_TRUECOLOR_ALPHA, (unsigned char*)fileReader.getData(pItem->m_ImageData));
-		            png_close_file(&png);
+					png_t png;
+					png_open_file_write(&png, finalPath);
+					png_set_data(&png, pItem->m_Width, pItem->m_Height, 8, PNG_TRUECOLOR_ALPHA, (unsigned char*)fileReader.getData(pItem->m_ImageData));
+					png_close_file(&png);
 
 					std::cout << "[INTERNAL] " << pName << "\t\t\tEXTRACTED!" << std::endl;
 				}
