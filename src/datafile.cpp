@@ -19,7 +19,7 @@ bool CDataFileReader::open(const char *pFilename)
 	if(Header.m_aID[0] != 'A' || Header.m_aID[1] != 'T' || Header.m_aID[2] != 'A' || Header.m_aID[3] != 'D')
 	{
 		if(Header.m_aID[0] != 'D' || Header.m_aID[1] != 'A' || Header.m_aID[2] != 'T' || Header.m_aID[3] != 'A')
-			return 0;
+			return false;
 	}
 
 	#if defined(CONF_ARCH_ENDIAN_BIG)
@@ -27,7 +27,7 @@ bool CDataFileReader::open(const char *pFilename)
 	#endif
 
 	if(Header.m_Version != 3 && Header.m_Version != 4)
-		return 0;
+		return false;
 
 	// read in the rest except the data
 	unsigned Size = 0;
